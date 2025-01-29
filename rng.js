@@ -1,12 +1,3 @@
-export let roll = function (regexDiceNotation) {
-    let result;
-
-
-
-    return result;
-};
-
-
 /**
  *
  * @param {*} dice the number of dice to roll
@@ -35,7 +26,7 @@ export let diceRoll = function (dice=1, faces=6, dropLowest=0, dropHighest=0, ex
     // sort rolls
     rolls.sort();
 
-    console.log('before dropping: ' + rolls.toString());
+    // console.log('before dropping: ' + rolls.toString());
 
     // drop lowest
     for (let i = 0; i < dropLowest; i++) {
@@ -51,7 +42,7 @@ export let diceRoll = function (dice=1, faces=6, dropLowest=0, dropHighest=0, ex
     for (let i = 0; i < rolls.length; i++) {
         result += rolls[i];
     }
-    console.log(rolls);
+    // console.log(rolls);
 
     return result;
 }
