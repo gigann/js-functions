@@ -13,3 +13,6 @@ header1.innerHTML = rng.randomInt(-99999999999999999999999999999999, 99999999999
 
 document.body.appendChild(header1);
 
+// console.log(rng.lcg(2 ** 16 + 1, 75, 74));
+console.log(rng.rand(0, 10));
+;
