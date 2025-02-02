@@ -79,13 +79,24 @@ export let xorshift = function (seed = Date.now()) {
 
 /**
  * Generates a pseudo-random number between two values.
- * @param {*number} min Inclusive minimum value.
- * @param {*number} max Exclusive maximum value.
- * @param {*number} seed Seeds the RNG. If left blank, uses Date.now()
- * @param {*function} algorithm Specifies the RNG algorithm. The default is a 32-bit xorshift.
+ * @param {*} min Inclusive minimum value.
+ * @param {*} max Exclusive maximum value.
+ * @param {*} seed Seeds the RNG. If left blank, uses Date.now().
+ * @param {*} algorithm Specifies the RNG algorithm. The default is a 32-bit xorshift.
  */
 export let rand = function (min, max, seed = Date.now(), algorithm = xorshift) {
     return algorithm(seed) * (max - min) + min;
+}
+
+/**
+ * Generates a pseudo-random integer between two values.
+ * @param {*} min Inclusive minimum value.
+ * @param {*} max Exclusive maximum value.
+ * @param {*} seed Seeds the RNG. If left blank, uses Date.now().
+ * @param {*} algorithm Specifies the RNG algorithm. The default is a 32-bit xorshift.
+ */
+export let randInt = function (min, max, seed = Date.now(), algorithm = xorshift) {
+    return Math.floor(rand(min, max, seed, algorithm));
 }
 
 /**

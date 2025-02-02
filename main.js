@@ -9,7 +9,7 @@ for (let i = 0; i < 6; i++){
 let header1 = document.createElement('h1');
 // header1.innerHTML = stats.toString();
 
-header1.innerHTML = rng.randomInt(-99999999999999999999999999999999, 99999999999999999999999999999999).toString();
+header1.innerHTML = rng.randInt(-10, 0).toString();
 
 document.body.appendChild(header1);
 
