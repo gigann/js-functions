@@ -109,7 +109,7 @@ export let normalize = function (value, maxValue) {
  * @param {*} max Exclusive maximum value.
  * @param {*} algorithm Specifies the RNG algorithm. The default is a 32-bit xorshift.
  */
-export let rand = function (min, max, algorithm = xorshift) {
+export let randFloat = function (min, max, algorithm = xorshift) {
     return algorithm() * (max - min) + min;
 }
 
@@ -120,7 +120,7 @@ export let rand = function (min, max, algorithm = xorshift) {
  * @param {*} algorithm Specifies the RNG algorithm. The default is a 32-bit xorshift.
  */
 export let randInt = function (min, max, algorithm = xorshift) {
-    return Math.floor(rand(min, max, algorithm));
+    return Math.floor(randFloat(min, max, algorithm));
 }
 
 /**
