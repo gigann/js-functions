@@ -1,4 +1,5 @@
 import * as rng from "./rng.js"
+rng.init(42);
 
 let stats = [];
 

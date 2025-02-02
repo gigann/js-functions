@@ -47,13 +47,27 @@ export let diceRoll = function (dice=1, faces=6, dropLowest=0, dropHighest=0, ex
     return result;
 }
 
-export let lcg = function (modulus = 2 ** 32, multiplier = 1664525, increment = 1013904223, seed = Date.now()) {
-    return multiplier * seed + increment % modulus;
+// export let lcg = function (modulus = 2 ** 32, multiplier = 1664525, increment = 1013904223, seed = Date.now()) {
+//     return multiplier * seed + increment % modulus;
+// }
+
+export let rng = {
+    seed: Date.now()
+};
+
+/**Initializes the RNG with a seed */
+export let init = function (seed) {
+    rng.seed = seed;
+
+    // set initial values for random number generators
+    xorshiftState.n = rng.seed >>> 0;
 }
 
-export let seed = Date.now();
+/**
+ * Saves the state of the xorshift. Initially set to an unsigned 32-bit seed.
+ */
 let xorshiftState = {
-    n: seed >>> 0
+    n: rng.seed >>> 0
 };
 
 /**
