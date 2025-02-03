@@ -1,4 +1,5 @@
 import * as rng from "./rng.js"
+
 rng.init(42);
 
 let stats = [];
@@ -16,6 +17,3 @@ document.body.appendChild(header1);
 
 // console.log(rng.lcg(2 ** 16 + 1, 75, 74));
 
-
-
-console.log(rng.randInt(0, 10));

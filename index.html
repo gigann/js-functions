@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script src="main.js" type="module"></script>
+
+    <form>
+        <label for="seed">Seed</label>
+        <input type="number" id="seed" placeholder="42"/>
+        <input type="checkbox" checked="true">Use Custom Seed</button>
+
+        <label for="algorithm">Algorithm</label>
+        <select name="algorithm" id="algorithm">
+            <option value="Xorshift 32">Xorshift 32</option>
+            <option value="Math.random">Math.random</option>
+        </select>
+
+        <label for="min">Minimum Inclusive Value</label>
+        <input type="number" placeholder="0" id="min">
+
+
+        <label for="max">Maximum Exclusive Value</label>
+        <input type="number" placeholder="1" id="max">
+
+        <button type="submit">Generate</button>
+
+        <h1>Your Randomly Generated Number is:</h1>
+        <h1 class="result">0</h1>
+    </form>
 </body>
+
 </html>
